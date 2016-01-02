@@ -1,0 +1,17 @@
+{{recipe-search query=q}}
+
+{{#if noSelectedRecipe}}
+  <div class="col-md-5 hero">
+    <div class="col-md-12 title">
+      <h1>Recipe Search</h1>
+    </div>
+    <div class="col-md-12 greeting">
+      <div class="col-md-12">
+        Discover tasty recipes by searching for any name or ingredient(s)! Click on a recipe to the left to see it's ingredients. Here are some {{link-to "zesty" "recipes.recipe" "8b11f9" (query-params q="zesty") invokeAction='search'}} examples to get started. Built on ember with a simple sinatra backend. Data courtesy of <a href="food2fork.com" target="_blank">Food2Fork.</a>
+      </div>
+    </div>
+    <span class="bar"></span>
+  </div>
+{{/if}}
+
+{{outlet}}

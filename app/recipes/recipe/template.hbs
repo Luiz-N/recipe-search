@@ -1,0 +1,22 @@
+<section class="col-md-5 right-column">
+
+  <div class="col-md-12 active-recipe">
+    <div class="col-md-6 image" style="background-image:url({{model.image}})">
+    </div>
+    <div class="col-md-6 details">
+      <h2>{{model.parsedName}}</h2>
+      <span class="source">
+        Source:
+        <a href="{{model.source}}" target="_blank">{{model.publisher}}</a>
+      </span>
+    </div>
+    <span class="bar"></span>
+  </div>
+
+  <div class="col-md-12 todoapp">
+    <section class='ingredient-container'>
+      {{todos-list todos=model.ingredients}}
+    </section>
+  </div>
+
+</section>
