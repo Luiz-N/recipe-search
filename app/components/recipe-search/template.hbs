@@ -3,9 +3,12 @@
     class='new-item'
     placeholder='Search for a recipe or ingredient'
     value=query
-    enter='search'
+    enter=attrs.search
   }}
 </header>
+{{#if emptySearchResult}}
+  <h2 class="col-md-12 text-center">No recipes found... :( Try something else!</h2>
+{{/if}}
 <ul class="item-list col-md-12">
   {{#each recipes as |recipe|}}
     <li class="col-md-6 text-center" {{action "queryRecord" recipe.id on="mouseEnter"}}>
@@ -16,7 +19,7 @@
         {{/link-to}}
         <div class="name">
           {{#link-to "recipes.recipe" recipe.id}}
-            {{recipe.name}}
+            {{recipe.parsedName}}
           {{/link-to}}
         </div>
       </div>

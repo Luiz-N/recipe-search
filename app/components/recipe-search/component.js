@@ -10,29 +10,19 @@ export default Component.extend({
 
   tagName: 'section',
   classNames: ['col-md-7'],
-
-  recipes: computed.alias('recipeService.response'),
-  query: null,
-  recipeService: inject.service('recipe-api'),
   store: inject.service(),
 
-  didInsertElement: function() {
-    this.get('recipeService').set('queryText', this.get('query'));
-    this.get('recipeService').query();
-  },
+  emptySearchResult: computed.lt('recipes.length', 1),
 
   actions: {
-    search: function(newQuery) {
-      this.get('recipeService').set('queryText', newQuery);
-      this.get('recipeService').query();
-    },
-
     queryRecord: function(id) {
-      // this action is intended to pre-load models when a user hovers
+      // this action is intended to pre-load ingredients when a user hovers
       // over a recipe item.
       let store = this.get('store');
-      // for some reason findRecord is always making a server call...
-      store.peekRecord('recipe',id) || store.find('recipe',id);
+      let recipe = store.peekRecord('recipe', id);
+      if (recipe.get("ingredients.length") === 0) {
+        store.find('recipe', id);
+      }
     }
   }
 
