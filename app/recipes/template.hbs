@@ -1,4 +1,9 @@
-{{recipe-search query=q recipes=model search=(action "search")}}
+{{recipe-search
+  query=q
+  recipes=model
+  search=(action "search")
+  loading=currentlyLoading
+}}
 
 {{#if noSelectedRecipe}}
   <div class="col-md-5 hero">
@@ -7,7 +12,7 @@
     </div>
     <div class="col-md-12 greeting">
       <div class="col-md-12">
-        Discover tasty recipes by searching for any name or ingredient(s)! Click on a recipe to the left to see it's ingredients. Here are some {{link-to "zesty" "recipes.recipe" "8b11f9" (query-params q="zesty") invokeAction='search'}} examples to get started. Built on ember with a simple sinatra backend. Data courtesy of <a href="food2fork.com" target="_blank">Food2Fork.</a>
+        Discover tasty food (or drink) recipes by searching for any name or ingredient(s)! Click on a recipe to see it's ingredients. Here are some <a {{action "setQuery" "zesty"}} style="cursor:pointer">zesty</a> and <a {{action "setQuery" "spicy"}} style="cursor:pointer">spicy</a> examples to get started. Built in ember with a simple sinatra backend. Data courtesy of <a href="food2fork.com" target="_blank">Food2Fork.</a>
       </div>
     </div>
     <span class="bar"></span>

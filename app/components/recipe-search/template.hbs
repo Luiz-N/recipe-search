@@ -9,7 +9,7 @@
 {{#if emptySearchResult}}
   <h2 class="col-md-12 text-center">No recipes found... :( Try something else!</h2>
 {{/if}}
-<ul class="item-list col-md-12">
+<ul class="item-list col-md-12 {{if loading 'loading'}}">
   {{#each recipes as |recipe|}}
     <li class="col-md-6 text-center" {{action "queryRecord" recipe.id on="mouseEnter"}}>
       <div class="recipe">
