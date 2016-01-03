@@ -11,13 +11,12 @@ export default Ember.Controller.extend({
   }),
 
   actions: {
-    search: function() {
+    search: function(query) {
+      if (query) {
+        this.set('q', query);
+      }
       this.send('refreshModel');
-    },
-
-    setQuery: function(query) {
-      this.set('q', query);
-      this.send('search');
+      ga('send', 'event', 'query', 'new search', this.get('q'));
     }
   }
 });

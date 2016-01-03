@@ -32,7 +32,7 @@ body {
   margin-top: 25px;
 }
 
-.right-column {
+.right-fixed-column {
   position: fixed;
   width: 38%;
 }
@@ -47,13 +47,18 @@ body {
 }
 
 .hero .title {
-  height: 50%;
+  height: 30%;
 }
 
 .hero h1 {
   padding-left: 10px;
   font-size: 56px;
   color: #393d3d;
+  margin-top: 3px;
+}
+
+.hero .greeting {
+  max-width: 450px;
 }
 
 .active-recipe .image {

@@ -15,7 +15,7 @@ export default Component.extend({
   emptySearchResult: computed.lt('recipes.length', 1),
 
   actions: {
-    queryRecord: function(id) {
+    fetchIngredients: function(id) {
       // this action is intended to pre-load ingredients when a user hovers
       // over a recipe item.
       let store = this.get('store');
