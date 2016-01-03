@@ -4,11 +4,9 @@ export default Ember.Controller.extend({
   queryParams: ['q'],
   q: '',
 
-  noSelectedRecipe: Ember.computed('target.currentPath', function() {
-    // see if current path is heading for a specific recipe
-    // if not then show greeting box. feels hackish... probably a better way
-    return this.target.currentPath !== "recipes.recipe";
-  }),
+  // If current path is not heading for a specific recipe then show greeting box.
+  // Feels hackish... probably a better way
+  noSelectedRecipe: Ember.computed.equal('target.currentPath', 'recipes.index'),
 
   actions: {
     search: function(query) {
