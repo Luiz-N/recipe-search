@@ -17,5 +17,8 @@
     "lodash": "~3.7.0",
     "Faker": "~3.0.0",
     "bootstrap": "~3.3.5"
+  },
+  "resolutions": {
+    "ember": "^2.0.0"
   }
 }
