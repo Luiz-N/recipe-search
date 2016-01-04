@@ -15,13 +15,11 @@ export default Component.extend({
   emptySearchResult: computed.lt('recipes.length', 1),
 
   actions: {
-    fetchIngredients: function(id) {
+    fetchIngredients: function(recipe) {
       // this action is intended to pre-load ingredients when a user hovers
       // over a recipe item.
-      let store = this.get('store');
-      let recipe = store.peekRecord('recipe', id);
       if (recipe.get("ingredients.length") === 0) {
-        store.find('recipe', id);
+        this.get('store').find('recipe', recipe.get('id'));
       }
     }
   }

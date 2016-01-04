@@ -11,10 +11,10 @@
 {{/if}}
 <ul class="item-list col-md-12 {{if loading 'loading'}}">
   {{#each recipes as |recipe|}}
-    <li class="col-md-6 text-center" {{action "fetchIngredients" recipe.id on="mouseEnter"}}>
+    <li class="col-md-6 text-center" {{action "fetchIngredients" recipe on="mouseEnter"}}>
       <div class="recipe">
         {{#link-to "recipes.recipe" recipe.id class="image-link"}}
-          <div class="image-container" style="background-image:url({{recipe.image}})">
+          <div class="image-container" style="background-image:url({{recipe.secureImage}})">
           </div>
         {{/link-to}}
         <div class="name">

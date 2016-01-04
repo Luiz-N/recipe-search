@@ -9,11 +9,15 @@ export default DS.Model.extend({
 
   ingredients: DS.hasMany('ingredient'),
 
+  secureImage: Ember.computed('image', function() {
+    return this.get('image').replace('http', 'https');
+  }),
+
   parsedName: Ember.computed('name', function() {
-    // parse &amp; to & etc...
-    let div = document.createElement('div');
-    div.innerHTML = this.get('name');
-    return div.firstChild.nodeValue;
+      // parse &amp; to & etc...
+      let div = document.createElement('div');
+      div.innerHTML = this.get('name');
+      return div.firstChild.nodeValue;
   })
 
 });
