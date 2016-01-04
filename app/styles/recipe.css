@@ -88,7 +88,7 @@
 .item-list .recipe .name a {
   display: block;
   text-decoration: none;
-  overflow-y: hidden;
+  overflow: hidden;
   color: inherit;
   white-space: nowrap;
   text-overflow: ellipsis;
