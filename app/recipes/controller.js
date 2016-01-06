@@ -10,7 +10,7 @@ export default Ember.Controller.extend({
 
   actions: {
     search: function(query) {
-      if (query) {
+      if (typeof query === "string") {
         this.set('q', query);
       }
       this.send('refreshModel');

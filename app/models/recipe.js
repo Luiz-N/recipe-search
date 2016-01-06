@@ -9,10 +9,6 @@ export default DS.Model.extend({
 
   ingredients: DS.hasMany('ingredient'),
 
-  secureImage: Ember.computed('image', function() {
-    return this.get('image').replace('http', 'https');
-  }),
-
   parsedName: Ember.computed('name', function() {
       // parse &amp; to & etc...
       let div = document.createElement('div');

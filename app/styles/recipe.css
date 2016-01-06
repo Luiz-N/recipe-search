@@ -19,8 +19,7 @@
 }
 
 .item-list {
-  transform: translateY(0);
-  transition: all 1500ms ease-out;
+  transition: all 250ms ease-out;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -29,7 +28,7 @@
 }
 
 .item-list.loading {
-  transform: translateY(1500px);
+  opacity: .25;
 }
 
 .item-list li {
